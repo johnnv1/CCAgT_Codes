@@ -1,5 +1,5 @@
 --- 
----
+--- 
 
 @import "{{ site.theme }}";
 
@@ -38,6 +38,7 @@
             visibility: hidden;
             opacity: 0;
             transition: .3s;
+            border: 1px dashed #b5e853;
 
             a {
                 color: #b5e853;
