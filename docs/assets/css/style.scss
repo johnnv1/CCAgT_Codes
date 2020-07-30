@@ -1,5 +1,5 @@
 --- 
---- 
+---
 
 @import "{{ site.theme }}";
 
@@ -8,11 +8,13 @@
     align-items: center;
     justify-content: center;
     border-bottom: 1px dashed #b5e853;
-    padding-bottom: 20px;
-    margin-top: -20px;
+    padding-bottom: 10px;
+    margin-top: -30px;
+    margin-bottom: 40px;
 
     .item {
         position: relative;
+        padding: 10px 0;
 
         &:hover {
             .sub-menu {
@@ -28,7 +30,7 @@
             left: 50%;
             display: flex;
             flex-direction: column;
-            background: white;
+            background: #151515 url("../images/bkg.png") 0 0;
             padding: 7px;
             width: max-content;
             transform: translateX(-50%);
@@ -36,10 +38,14 @@
             visibility: hidden;
             opacity: 0;
             transition: .3s;
+
+            a {
+                color: #b5e853;
+            }
         }
     }
 
     a {
-        padding: 0 10px;
+        padding: 0 20px;
     }
 }
