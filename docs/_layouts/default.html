@@ -1,67 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="{{ site.lang | default: "en-US" }}">
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-
-
-    <link rel="icon" type="icon" sizes="16x16"
-        href="{{ '/assets/images/icon/favicon.ico?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ '/assets/images/icon/favicon-32x32.png?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="icon" type="image/png" sizes="96x96"
-        href="{{ '/assets/images/icon/favicon-96x96.png?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ '/assets/images/icon/favicon-16x16.png?v=' | append: site.github.build_revision | relative_url }}">
-
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-
-    {% seo %}
-</head>
+{%- include head.html -%}
 
 <body>
 
-    <header>
-        <div class="container">
-            <a id="a-title" href="{{ '/' | relative_url }}">
-                <h1>{{ site.title | default: site.github.repository_name }}</h1>
-            </a>
-            <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+    {%- include header.html -%}
 
-            <section id="downloads">
-                {% if site.show_downloads %}
-                <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-                <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-                {% endif %}
-                <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on
-                    GitHub</a>
-            </section>
-        </div>
-    </header>
-
-    <div class="menu">
-        <div class="item">
-            <a>Menu 1</a>
-            <div class="sub-menu">
-                <a>sub Menu 1</a>
-                <a>sub Menu 2</a>
-            </div>
-        </div>
-        <div class="item">
-            <a>Menu 2</a>
-        </div>
-        <div class="item">
-            <a>Menu 3</a>
-            <div class="sub-menu">
-                <a>sub Menu 1</a>
-                <a>sub Menu 2</a>
-            </div>
-        </div>
-    </div>
+    {%- include menu.html -%}
 
 
     <div class="container">
@@ -70,20 +17,58 @@
         </section>
     </div>
 
-    {% if site.google_analytics %}
-    <!-- Google Analytics -->
-    <script>
-        window.ga = window.ga || function () {
-            (ga.q = ga.q || []).push(arguments)
-        };
-        ga.l = +new Date;
-        ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('send', 'pageview');
-    </script>
-    <script async src='//www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
 
-    {% endif %}
+    {%- if posts.size > 0 -%}
+    {%- if page.list_title -%}
+    <h2 class="post-list-heading">{{ page.list_title }}</h2>
+    {%- endif -%}
+    <ul class="post-list">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {%- for post in posts -%}
+        <li>
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+            {%- endif -%}
+        </li>
+        {%- endfor -%}
+    </ul>
+
+    {% if site.paginate %}
+    <div class="pager">
+        <ul class="pagination">
+            {%- if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path | relative_url }}"
+                    class="previous-page">{{ paginator.previous_page }}</a></li>
+            {%- else %}
+            <li>
+                <div class="pager-edge">•</div>
+            </li>
+            {%- endif %}
+            <li>
+                <div class="current-page">{{ paginator.page }}</div>
+            </li>
+            {%- if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a>
+            </li>
+            {%- else %}
+            <li>
+                <div class="pager-edge">•</div>
+            </li>
+            {%- endif %}
+        </ul>
+    </div>
+    {%- endif %}
+
+    {%- endif -%}
+
+
+    {%- include google_analytics.html -%}
 </body>
 
 </html>
