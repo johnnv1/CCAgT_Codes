@@ -55,4 +55,4 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
 
-#permalink: /blog/:year/:month/:day/:title
+permalink: /CCAgT_Codes/blog/:year/:month/:day/:title
