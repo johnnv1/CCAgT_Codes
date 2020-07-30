@@ -1,9 +1,43 @@
---- --- @import "{{ site.theme }}";
+--- 
+--- 
+
+@import "{{ site.theme }}";
 
 .menu {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px dashed #b5e853;
+    padding-bottom: 20px;
+    margin-top: -20px;
+
+    .item {
+        position: relative;
+
+        &:hover {
+            .sub-menu {
+                opacity: 1;
+                z-index: 9;
+                visibility: visible;
+            }
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            padding: 7px;
+            width: max-content;
+            transform: translateX(-50%);
+            z-index: -9;
+            visibility: hidden;
+            opacity: 0;
+            transition: .3s;
+        }
+    }
 
     a {
         padding: 0 10px;
