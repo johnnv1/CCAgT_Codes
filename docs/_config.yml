@@ -1,1 +1,5 @@
 theme: jekyll-theme-hacker
+title: "Codes of the Cytology Dataset - CCAgT: Images of Cervical Cells with AgNOR Stain Technique"
+description: "Repository with Image processing algorithms and artificial intelligence to help diagnose malignant cells. The cells with which I work obtained through the technique of brush cytology, are cells of the cervix where to color is applied silver nitrate, this technique is known by the name Argyrophilic Nucleolar Organizer Region - AgNOR."
+show_downloads: "true"
+google_analytics: UA-174088517-1
