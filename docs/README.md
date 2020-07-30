@@ -1,4 +1,4 @@
-# Welcome to my public notes of my master's research 
+<h1 style="text-align:center;"> Welcome to my public notes of my master's research</h1>
 <p style="text-align: center; font-size:18px; margin-top:-14px; margin-bottom:-10px; font-weight: bold;">Public Repository to concentrate and document my codes</p> 
 <p style="text-align: right; font-size:11px;">Written by João Amorim <br> Jul 30, 2020</p> 
 
