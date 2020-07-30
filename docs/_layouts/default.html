@@ -16,6 +16,12 @@
             {{ content }}
         </section>
     </div>
+
+    {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ site.path }}{{ post.url }}"
+            title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+
     {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
     <h2 class="post-list-heading">{{ page.list_title }}</h2>
