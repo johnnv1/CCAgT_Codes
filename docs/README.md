@@ -9,3 +9,6 @@ A little about who writes to you, I am graduated in Computer Engineering at Univ
 About my research and the content that will be found in this repository, the research is focused on using image processing algorithms and artificial intelligence to help diagnose malignant cells. The cells with which I work obtained through the technique of brush cytology, are cells of the cervix where to color is applied silver nitrate, this technique is known by the name Argyrophilic Nucleolar Organizer Region - AgNOR. To help in the diagnosis I must identify the nuclei, clusters, and satellites, after identifying the desire to characterize the cells. More information about the cells and images will be posted on specific pages of this repository.
 
 Thank you for reading, I apologize for the mistakes in my writing in English and if there are suggestions or doubts feel welcome to contact me. And I hope the codes or explanations will give you some insights or help you with something.
+
+
+-----
