@@ -14,4 +14,5 @@ Thank you for reading, I apologize for the mistakes in my writing in English and
 -----
 
 Test 1
+equation test 1 = 
 $$\frac{\partial f(y)}{\partial x} = \frac{\partial f}{\partial y} \times \frac{\partial y}{\partial x}$$
