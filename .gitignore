@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Gh-pages
+_site
+.sass-cache
+Gemfile.lock
+*.gem
+vendor/
